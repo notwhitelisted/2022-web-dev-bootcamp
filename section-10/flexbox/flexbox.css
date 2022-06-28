@@ -1,0 +1,43 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    background: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: row;
+}
+
+#container div {
+    width: 200px; 
+    height: 200px; 
+    display: flex;
+    
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+main .sidebar {
+    background-color: #6930c3;
+    border: 2px solid white;
+    flex: 1 2 300px;
+}
+
+main .maincontent {
+    background-color: #80ffdb;
+    flex: 1 500px;
+}
