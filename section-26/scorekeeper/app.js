@@ -1,3 +1,4 @@
+//setting querySelectors to variables
 const p1Button = document.querySelector('#p1Button');
 const p2Button = document.querySelector('#p2Button');
 const p1Display = document.querySelector('#p1Display');
@@ -5,12 +6,13 @@ const p2Display = document.querySelector('#p2Display');
 const resetButton = document.querySelector('#reset');
 const winningScoreSelect = document.querySelector('#playTo');
 
-
+//setting variables to scores
 let winningScore = 5;
 let p1Score = 0;
 let p2Score = 0;
 let isGameOver = false;
 
+//first event listener for player1 button
 p1Button.addEventListener('click', function () {
     if (!isGameOver) {
         p1Score += 1;
@@ -25,6 +27,7 @@ p1Button.addEventListener('click', function () {
     }
 })
 
+//first event listener to player2 button
 p2Button.addEventListener('click', function () {
     if (!isGameOver) {
         p2Score += 1;
@@ -39,13 +42,16 @@ p2Button.addEventListener('click', function () {
     }
 })
 
+//getting the winning score and then resetting
 winningScoreSelect.addEventListener('change', function () {
     winningScore = parseInt(this.value) //refers to specific object we're on
     reset();
 })
 
+//resets the game
 resetButton.addEventListener('click', reset);
 
+//reset function
 function reset() {
     isGameOver = false;
     p1Score = 0;

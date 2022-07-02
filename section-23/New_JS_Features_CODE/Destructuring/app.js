@@ -53,7 +53,7 @@ const { email, firstName, lastName, city, bio } = user;
 //     return `${firstName} ${lastName}`
 // }
 
-
+//SHORTER FROM ABOVE. 
 function fullName({ firstName, lastName }) {
     return `${firstName} ${lastName}`
 }

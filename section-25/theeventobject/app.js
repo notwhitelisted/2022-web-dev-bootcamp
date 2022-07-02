@@ -1,11 +1,13 @@
+//parameter, "e", "evt","event" gets passed in
+//contains information about the object
 document.querySelector('button').addEventListener('click', function (evt) {
     console.log(evt)
 })
 
 // const input = document.querySelector('input');
 // input.addEventListener('keydown', function (e) {
-//     console.log(e.key)
-//     console.log(e.code)
+//     console.log(e.key) - the actual key value 
+//     console.log(e.code) - where it is located on keyboard. 
 // })
 // input.addEventListener('keyup', function () {
 //     console.log("KEYUP")

@@ -1,10 +1,12 @@
 const button = document.querySelector('#changeColor');
 const container = document.querySelector('#container');
 
+//changing the container's style's background.
 button.addEventListener('click', function (e) {
     container.style.backgroundColor = makeRandColor();
-    e.stopPropagation();
+    e.stopPropagation(); //stops event from bubbling up. 
 })
+//hide style
 container.addEventListener('click', function () {
     container.classList.toggle('hide');
 })

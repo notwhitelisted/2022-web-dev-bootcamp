@@ -2,6 +2,7 @@ const allLinks = document.querySelectorAll('a');
 
 // for (let link of allLinks) {
 //     link.innerText = 'I AM A LINK!!!!'
+//     -changes every a tags to 'I AM A LINK!!!!'-
 // }
 
 

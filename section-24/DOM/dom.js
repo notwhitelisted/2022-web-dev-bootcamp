@@ -1,8 +1,11 @@
-//document object model 
+//DOM (document object model): 
+
+//1. SELECTING
+
 //has JS object that modifies the HTML 
 //takes html + css and adds JS objects to them 
 //document object - entry point into world of DOM. contains representation of all contents on a page + methods + prop.
-
+    //contains every element on the page. everything is in an object. has key and value. 
 //#document.all - contains contents + lots of properties, manipulate html + css + everything else. 
  
 //getElementById(insert ID);

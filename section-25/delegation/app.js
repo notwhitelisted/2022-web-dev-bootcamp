@@ -1,3 +1,4 @@
+//delegations - addEventListener to something. delegate it to something. specify the clicks/action
 
 const tweetForm = document.querySelector('#tweetForm');
 const tweetsContainer = document.querySelector('#tweets');
