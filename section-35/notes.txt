@@ -1,0 +1,40 @@
+Get vs. Post Requests
+get: used to retrieve info
+    -data is sent via query string
+    -information is plainly visible in the url
+    -limited amount of data can be sent
+    -no sideeffects on the backend 
+
+post: used to post data to the server
+    -used to write/create/update
+    -data is sent via request body, not a query string!
+    -can send any sort of data (JSON)
+    -big changes.
+
+    Post Routes
+    -see index.js and getpost.html
+
+Parsing The Request Body 
+-req.body: contains key-value pairs of data submitted in the request body. by default it is undefined
+-populated when you use body-parsing middleware such as express.json() or express.urlencoded()
+
+
+REST 
+-REST: representational state transfer
+-set of guidelines for how a client + server should communicate and perform CRUD operations
+-format URLs and HTTP verbs in your applications
+
+idea: combine URL with base URL with different methods to expose full CRUD operations
+over HTTP
+-create our own APIs, our own application 
+
+// GET /comments - list all comments
+// POST /comments - Create a new comment 
+// GET /comments/:id - Get one comment (using ID)
+// PATCH /comments/:id - Update one comment
+// DELETE /comments/:id - Destroy one comment
+
+Forms + Express 
+
+
+Method Override 

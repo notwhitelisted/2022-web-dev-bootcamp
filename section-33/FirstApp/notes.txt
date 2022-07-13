@@ -1,0 +1,61 @@
+EXPRESS
+-first frameworks
+-help build web apps
+-npm package which comes with a bunch of methods and optional plugins that we can use to build web applications and API
+
+-listen to incoming requests, url, query, form data, user/pass, etc.
+-build data then send it back to user 
+
+-helps with starting server to listen for requests
+-parse incoming requests
+-match those requests to particular routes
+-craft our http response and associated content 
+
+
+What are frameworks?
+    Library: 
+    -control flow of application code and decide when to use the Library
+
+    Framework:
+    -control is inverted --> framework is in charge
+    -framework tells you where to plug in the code 
+
+Express App
+    -basic idea is that you can control what port number you are putting in
+    -localhost:3000 or localhost:8080
+    -depending on what you put for 'variable.listen' whatever is listening, it will go to that port number/server
+
+    -.use utilizes the variable to send in a request to the server 
+    -.listen calls for the server
+
+Routing Basics
+    Request and Response Objects
+    -on every incoming requests, we have 2 different parameters in this function that are automatically passed in 
+    -parameters are request, response (res, req) - made by Express
+    
+    -response object has methods on it, such as res.send(); - sends HTTP response through Express 
+        -can be html, objects, strings, etc. 
+
+    Routing
+    -refers to taking incoming requests and a path that is requested and matching that to some code and some response
+    -localhost:8080/dogs/cats/etc
+    -res.send() can only send once per http request. so do it when you are done with sending the specific request. 
+
+Path Parameters
+-often want to define patterns for the route we take 
+-use : to label as new path variable 
+-accessing the place you need. you access through request object
+-Express adds a property to the request object --> makes object for you and property is called params 
+
+Query Strings 
+-portion of url that comes after a ? 
+-depending on how the application is set up.
+    
+    How it works
+    -if we define some route, we do not add anything to the path here in terms of matching a query string
+    -request object that Express constructs for user and passes into the callback,
+        the request object h as a particular property called query and takes in key values pairs based on the query
+    -use postman --> params --> key: q, value: whatever
+
+Nodemon
+-auto-restarting the server without clearing in the terminal and running it again 

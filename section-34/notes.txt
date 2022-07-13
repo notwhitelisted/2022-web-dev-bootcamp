@@ -1,0 +1,46 @@
+Templating
+-instead of writing static HTML code
+-embed information and logic so we can repeat parts of the template (LOOP)
+-can conditionally show or hide something whether you're logged in or not 
+
+EJS - Embedded JS
+-helps with configuring Express
+-very similar to string template literal, but with HTML. 
+-fill it in blanks or what you want to fill in 
+
+-see views folder
+
+-res.render() = view and sends the rendered HTML string to the client and then pass through file name 'home.ejs'
+
+    Setting The Views Directory
+    -default views directory that Express is looking for is only going to work if I am running my application from within
+    same directory where my views folder is 
+    -path module: comes built in with Node, gives us methods that have to do with file directory paths 
+
+    EJS Syntax (Interpolation)
+    -adding logic and fill in the blanks. 
+        
+        TAGS
+        -EJS has particular tags that indicate to us 
+        -NOT HTML, don't treat it like HTML
+        -<%= 'whatever goes in here' %> will be javascript 
+
+Passing Data to Templates
+-see random.ejs 
+-see /rand in index.js
+
+Static Assets
+-serve things such as CSS and JS files that we want to include in response to server side 
+
+    express.static
+    -middleware 
+    -works by app.use(express.static('public')) - execute this every single request. 
+    -
+
+Creating Partials
+-way of including other templates in other templates 
+-bootstrap, jquery - duplicate before using it on other pages 
+    --> create an all in one template. then include it in our sub templates whenever needed 
+
+EJS Loops and Conditionals
+-

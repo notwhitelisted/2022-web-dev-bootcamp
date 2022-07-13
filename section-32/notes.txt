@@ -1,0 +1,33 @@
+1. Modules + NPM (node package manager)
+-ex: npm - rainbow package (rainbow text, change terminal color output), figlet package (generates ascii art), 
+franc package 
+
+    2. Module.Exports
+    -different ways to write it, but see math.js and app.js to learn more about it
+    -exports variable is available within a module's file-level scope and is assigned the value of module.exports before 
+        module is evaluated
+    -if variable has new assignment, it will not run properly. so double check what the variable represents 
+
+    3. Requiring Modules
+    -set up the modules in their respective folders. start small
+    -then go from small to bigger files to main files.
+    
+    4. Using NPM
+    -library of tons of code and packages that is free to use 
+    -command line tool to easily install and manage 
+
+    5. Installing Packages
+        a. npm install 'package name'
+        b. you get node_modules - do not touch, package-lock.json - do not touch 
+        c. npm i 'package name' or npm i -g === global installation
+
+        dependencies: versions of objects necessary for express and node is going to install. 
+            all in package.json file
+            
+    6. Creating Package.json files
+    -instead of touching package.json myself and making it, run command 'npm init' 
+    -creation utility for package.json
+    -typically, just follow through with the package default template --> once completed --> get package.json file
+
+    NOW, install a package, ex: figlet 'npm i figlet'
+    -it will show in package.json folder 

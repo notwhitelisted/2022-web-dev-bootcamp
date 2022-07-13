@@ -1,0 +1,24 @@
+{
+  "name": "2022-web-dev-bootcamp",
+  "version": "1.0.0",
+  "description": "This is a collection of my coding exercises derived from Colt Steele's Web Developer Bootcamp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notwhitelisted/2022-web-dev-bootcamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notwhitelisted/2022-web-dev-bootcamp/issues"
+  },
+  "homepage": "https://github.com/notwhitelisted/2022-web-dev-bootcamp#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "nodemon": "^2.0.19"
+  }
+}

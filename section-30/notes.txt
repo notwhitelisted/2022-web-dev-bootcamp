@@ -1,0 +1,28 @@
+NODE!! - EXPRESS, DATABASE, AUTHENTICATION (SERVER SIDE)
+
+Terminal - text-based interace to your computer (was physical, but now software)
+    ex: mac
+Shell - program running on the terminal (software)
+    ex: terminal is ATM. shell is the software running the ATM
+    ex: most popular shell is 'BASH' on mac (default) and z-shell (zsh)
+    ex: UNIX SHELL
+
+-LS: list, list current contents of current directory I am in. '~' means you're at home directory 
+
+-CD: change directory, cd .. = go back, cd directory = go in, cd
+
+-MKDIR: make directory, essentially making new folders. mkdir basketball 
+
+-RM: remove, complete removes a file. (BE CAREFUL). rm app.css, rm index.html app.js
+    rmdir: only remove empty directories. have to empty out the folder before removing it 
+    rm -rf: recursive: remove everything in nested and continue 
+            force: remove everything without asking 
+
+-Touch: touch, makes files for us. 'touch file.txt index.html app.css app.js' 
+    touch: sets the modification and access times of files 
+
+-PWD: print working directory, gives you a location of which directory you are in.
+
+-Relative vs. Absolute Paths: 
+    relative: paths are only relative to which directory you are in. so you have to either cd in or out to access it
+    absolute: cd/Users/AaronTang - absolute path to anywhere/directory you want to go to. starts with / from root directory

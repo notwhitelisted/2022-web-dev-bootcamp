@@ -1,0 +1,54 @@
+1. API
+-looking for just the data
+-'application programming interface' - software to software 
+-web APIs are HTTP based 
+
+-different APIs have different end points, different results
+    Query Strings
+    -url followed by ? then more stuff separated by &
+    -can append anything onto the url 
+    -ex: website.com/api/people/5?color=green&age=23&silly=yes - api isn't going to look for the query strings. just base url
+
+    Fetch API
+    -allows to make requestions using functions called fetch and it supports promises 
+    -res.json.then() --> resolve the promises that are created.
+        
+        Basic Usage:
+        -call function fetch("url") - reject/resolve promise
+        -add res.json --> return another promise because it was an incomplete body (readable stream) 
+        -add on .then() --> get response 
+        -add on .catch --> get error if needed
+        -repeat 
+
+    Axios
+    -very popular library that uses fetch behind the scenes
+    -not native to JS, made for creating HTTP requests
+    -import to code in order to use it (good for making a lot of requests)
+    -can be used in nodeJS. can copy pasta script into HTML
+    -<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+2. JSON
+-majority of APIs use JSON
+-stands for Javascript Object Notation
+-main use is just sending information that is consistent and predictable.
+-uses objects, but every key is double quoted string
+
+3. AJAX
+-Asynchronous Javascript And XML
+-concept of making requests to load/send info behind the scenes on an app or website working with server somewhere
+-make request --> server --> sends back html/css/js OR information (JSON)
+-load data, fetch data, save something to database via JS
+
+4. Hoppscotch
+-helps with making API calls and testing API requests, send requests to own servers (backend + node)
+-free. sign up with email and password
+-can turn on querys on Hoppscotch via parameter section or add them in the url 
+-headers: pass info with given request + response. like metadata to add onto requests
+    with headers, you get back HTML as opposed to JS
+    if you want JSON, you need to put the endpoint in url and 'Accept' in the header section 
+    then application/json to get JSON back
+
+
+-get: get request to URL and tells us on that documentation
+-post: post request/data to store/save somewhere to have an impact somehow later on

@@ -1,0 +1,50 @@
+1. Call Stack
+-mechanism the JS interpreter uses to keep track of its place in a script that calls multiple functions
+-ex: a finger in a book/bookmark in a book
+-stack: basic data structure --> first in, last thing out. most recent in, first thing out.
+
+    How it works?:
+    -script calls function, interpreteradds to call stack, then carries out function
+    -any functions that are called by that function are added to the call stack further up. runs where their calls are reached
+    -when current function is finished, interpreter takes it off the stack and resumes execution where it left off in the last code
+
+2. JS - single threaded + webAPI
+-running 1 line at a time (happens very quick)
+-see callbacks/app.JS
+-browser is not written in JS, can do stuff that JS can't do. JS sends tasks to browser to finish tasks
+-tasks happen in the background (such as requests to the site)
+
+3. Callback Hell
+-see CallbackHell/app.JS
+-see PromisesIntro/app.JS - first example.
+
+4. Promises
+-an object representing the eventual completion or failure of an asynchronous operation
+-getting data from some sort of API. it takes time, sends multiple requests, etc.
+-see PromisesIntro/app.JS - second example.
+-promises: eventual promise/resolution of something good or bad. goes from 'pending' --> 'resolved' or 'rejected'
+
+-this is a returned object to which you attach callbacks, instead of passing callbacks into a function
+
+    Creating Our Own Promises:
+    -see CreatingPromises/app.JS
+    -uses 'new Promise'(reject, resolve) {
+        whatever gets passed through will either be rejected or resolved
+    }
+
+5. Async functions
+-newer, cleaner syntax for writing 'promises'
+-keywords: async + await
+
+    Async:
+    -async functions always return a promise
+    -if function returns a value, promise is resolved
+    -if function throws an exception, promise is rejected
+    -async goes in front of the word function: ex: async function hello() {...};
+
+    -if you want a REJECTION, put in keyword THROW 
+    -if you want a RESOLVED, put in keyword RETURN
+
+    Await:
+    -we can only use await keyword inside of functions declared with async
+    -await will pause the execution of the function, waiting for a promise to be resolved

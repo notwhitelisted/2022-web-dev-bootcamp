@@ -1,0 +1,31 @@
+1. NODE.js
+-javascript runtime, runs outside of the browser. 
+
+    Usages:
+    -web servers
+    -command line tools
+    -native apps (.exe, downloading the app to use instead of browser)
+    -video games
+    -drone software
+
+-doesn't have access to window, document, DOM APIs 
+-comes with built-in modules that don't exist in the browser. helps with operating system and files/folders 
+
+-make .js file --> put javascript in the file --> run code with node filename.js
+-have to be in the correct directory 
+
+2. Process + ARGV
+-an object that's available in global scope - without using require() or explicitly accessed using require()
+-has info + control over the current node.js process. 
+
+    process.argv: returns an array containing command line arguments passed when the Node.js process was launched
+        -you can pass in arguments that will be created in the argv array. first is gonna be the executable path which is 
+        the original
+        -next the path that you will be actually running 
+
+
+3. File System Module Crash Course 
+    Boilerplate.js
+    -in busy processes, use the asynchronous version of these calls
+    -synchronous version will block the entire process until they complete, halting all connections
+        -easy to follow
