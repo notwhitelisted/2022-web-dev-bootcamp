@@ -1,0 +1,55 @@
+ex1: 
+
+use animalShelterDB  //switched to db animalShelterDB
+db                   //animalShelterDB (current DB that I am in)
+show collections     //container for similar data 
+
+===========================
+==MONGODB CRUD OPERATIONS==
+===========================
+
+1.Inserting with MongoDB 
+-insert into a collection: grouping of data in a database 
+ex2:
+```db.dogs.insertOne({name: "Ein", age: 6, breed: "corgi", catFriendly: true})  //"acknowledged": true, insertedID: ObjectID("123kljasdlkdfjasldfka")
+```show collections```                                                          //dogs
+```db.dogs.find()```                                                            //see all dogs. "_id" = gives you ObjectID
+
+```db.collection.insert()``` - can pass in either single document or an object/array of documents 
+```db.dogs.insert([{name: "Wyatt", breed: "Golden", age: 14, catFriendly: false},                   //bulkwriteresults --> confirm it 
+name: "Tonya", breed: "Chihuahua", age: 17, catFriendly: true}])```
+
+```db.dogs.find()``` //prints out 3 unique "_id" 
+
+ex3:
+```db.cats.insert({name: "Blue Steele", age: 6, dogFriendly: false, breed: "Scottish Fold"})``` //1 collection inserted
+```db.cats.find()```
+
+both are separate collections, but in the same database 
+
+2. Finding/Querying with MongoDB
+-reading databases 
+start with ```db.collection.find()``` //return every document in a collection 
+```db.collection.find({breed: "corgi"})```     //finding whatever it is I am looking for. case sensitive 
+
+3. Updating with MongoDB
+```db.dogs.updateOne({name: 'Ein'}, {$set: {age: 4, breed: 'Lab'}})``` //set ein's age to 4 from 6 and corgi to lab breed 
+```db.dogs.find({name: 'Ein'})                           //everything else is the same, but the age is now 4 and breed is now lab 
+
+```db.dogs.updateMany({catFriendly: true}, {$set: {isAvailable: false}})```
+```db.dogs.find()```                                                          //adds new object in the list when printed.  
+
+```db.cats.updateOne({age: 6}, {$set: {age:7}, $currentDate: {lastChanged: true}})``` //prints new age + lastChanged date (in BSON)
+
+4. Deleting with MongoDB
+```db.collection.deleteMany()``` {isAvailable: false}
+```db.collection.deleteOne()``` {name: 'Blue Steele'}
+
+5. Additional Mongo Operators 
+-doc --> reference --> query operators
+
+comparison operators: ```db.dogs.find({age: {$gt: 8}})``` //greater than 
+                      ```db.dogs.find({age: {$gte: 10}})``` //greater than or equal to 
+```db.dogs.find({breed: {$in ['Mutt', 'Corgi']}})``` //prints all dogs that are these speicfic breed
+```db.dogs.find({breed: {$in ['Mutt', 'Corgi']} age: {$lt: 10}})``` //prints all dogs that are these specific breed + LT age 10
+```db.dogs.find({$or: [{'personality.catFriendly': true}, {age: {$lte: 2}}]     //OR 

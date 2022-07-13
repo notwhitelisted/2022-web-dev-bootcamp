@@ -1,0 +1,43 @@
+MongoDB
+-most popular database for modern applications. commonly used in combo with node 
+-mongo is a document database: use to store and retrieve complex data from 
+
+-databases scale well. 
+-databases offer security features + control over access to data
+-databases provide tools for easy insertion, querying, and updating of data
+-databases can handle large amounts of data efficiently and store it compactly
+
+    Why Mongo?:
+    -commonly used with node and express (MEAN and MERN stacks) 
+    -easy to get started with (though it can be tricky to truly master)
+    -plays particularly well with JS and strong community of developers with MongoDB
+
+    Installation:
+        MacOS:
+        1. install tool called Homebrew - installs all developer tools - takes ~10 mins
+        2. type ```brew tap mongodb/brew```
+        3. ```brew install mongodb-community@4.4```
+        4. ```brew services start mongodb-community@4.4``` (start MongoDB in background - acts like a server)
+        
+        Windows: 
+        1. https://zarkom.net/blogs/how-to-install-mongodb-for-development-in-windows-3328
+
+    Mongo Shell: 
+    -REPL
+    -create databases, security features, etc. 
+    -type out ```mongo``` 
+    -acts like a JS shell. can type javscript in it 
+    -see mongodb.txt
+
+SQL vs. NoSQL Databases
+    sql:
+    -structured query language databases are relational databases. 
+    -pre-define a schema of tables before inserting anything 
+    -ex: MySQL, Postgres, SQLite, Oracle, Microsoft SQL Server
+    
+    noSQL:
+    -do not use SQL. many types of noSQL databases including document, key-value, and graph stores
+    -ex: MongoDB, Couch DB, Neo4j, Cassandra, Redis
+
+BSON
+-binary JSON - more compact version of JSON (stored as binary) 
