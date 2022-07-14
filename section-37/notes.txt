@@ -1,0 +1,60 @@
+ODM: tool that connects Node and Javascript to Mongo and it provides a bunch of useful methods and tools to help 
+    -helps with that experience and makes it better
+
+ORM/ODM
+-object data mapper/object document mapper
+-ODMs, such as Mongoose map documents coming from a database into usable JS objects
+-allows us to model our application data and define a schema... easy to validate data and build complex queries from comfort of JS 
+
+Connecting Mongoose to Mongo
+idea: make MongoDB and make it better/friendly to use on the JS side of things (better experience)
+-see index.js 
+
+Mongoose Model 
+-easy to interact with MongoDB from JS 
+-model are JS classes made with Mongoose that represent info in a MongoDB (info from a collection)
+
+    Schema: mapping of different collection keys from Mongo to different types in JS 
+        -define a schema
+        -next make a model
+        -next mongoose will make a collection for us - lowercase + pluralize it 
+        -now you can make instances of the "Movie" class (see index.js) --> save it to Mongo database 
+        
+MONGOOSE CRUD
+    1. Inserting Many
+    -see index.js
+
+    2. Finding with Mongoose
+    -load file in mongodb --> ```node``` --> ```.load index.js```
+    -Movie.find({}) - finds all the movie in the collection
+    -Movie.find({}).then(data => console.log(data)) - gets correct information
+    -Movie.find({rating: 'PG-13'}).then(data => console.log(data))
+    -Movie.find({year: {$gte: 2010}}).then(data => console.log(data))
+    -Movie.find({year: {$lte: 1990}}).then(data => console.log(data))
+    
+    3. Updating with Mongoose
+    -Model.updateOne() - update first thing in query we write
+    -Movie.updateOne({title: 'Amadeus'}, {year: 1984}).then(res => console.log(res))
+    -Model.updateMany()
+    -Movie.updateMany({title: {$in: ['Amadeus', 'Stand By Me']}}, {score: 10}).then(res => console.log(res))
+    
+    4. Deleting with Mongoose
+    -Movie.remove({title: 'Amelie'}).then(msg => console.log(msg))
+    -Movie.deleteMany({year: {$gte: 1999}}).then(msg => console.log(msg))
+    -Movie.findOneAndDelete({title: 'Alien'}).then(m => console.log(m))
+
+Schema Constraints
+-String, Number, Date, Buffer, Boolean, Mixed, ObjectID, Array, Decimal128, Map, Schema 
+
+Model Instance and Static Methods 
+
+Mongoose Middleware 
+-mongoose gives us the ability to run code before and after certain things are executed 
+-run a pre/post hook (middleware) before or after things are executed 
+
+-ex: deleting a user - delete all photos, comments, information about that user via middleware
+-
+
+Mongoose Virtuals 
+-ability to add properties to schema that doesn't exist in DB, but have access due to Mongoose
+-
