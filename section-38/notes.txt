@@ -1,0 +1,27 @@
+                =========================
+                ==Mongoose with Express== 
+                =========================
+
+Express + Mongoose Basic Setup 
+    ```npm init -y``` - package.json
+    ```npm i express ejs monogoose``` - express packages
+
+    -make folders + index.js 
+        const express = require('express');
+        const app = express();
+        const path = require('path');
+
+    -start up Mongo Demon running in background for this to work 
+
+Creating Our Model
+-see /models/product.js
+-you can separate all the database information and see it from an web 
+app just for development 
+-see all mongoose code in seeds.js
+
+Product index
+-route to mongoDB
+-list of current products in page --> /products (list of the products)
+
+Product Details 
+-finding product by ID 
