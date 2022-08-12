@@ -1,0 +1,43 @@
+============================
+=Express Router and Cookies=
+============================
+
+Express Router Basics 
+-router express - move and group routes together, put them in separate file = convience 
+
+    Express Router and Middleware
+
+
+Cookies
+-cookies are bits of info that are stored in user's browser 
+-once cookie is set, a user's browser will send the cookie on every subsequent request to the site
+-cookies allow use to make HTTP stateful 
+
+    Sending Cookies
+    1. set up a route
+    2. send a cookie to someone as a response and it'll be stored 
+
+    Cookie Parser Middleware
+    npm i cookie-parser
+    ```const cookieParser = require('cookie-parser');
+    app.use(cookieParser('thisismysecret'));```
+
+    Signing Cookies
+    -making sure the original data that is sent to client (browser) is still the data sent back to us 
+    -ex: 
+    app.get('/getsignedcookie', (req, res) => {
+    res.cookie('fruit', 'grape', { signed: true })
+    res.send('OK SIGNED YOUR FRUIT COOKIE!')
+
+    -verifying the validity or that nothing has changed 
+    app.get('/verifyfruit', (req, res) => {
+    console.log(req.cookies)
+    console.log(req.signedCookies)
+    res.send(req.signedCookies)
+    -maintains the integrity of the original signage. will be false or empty if signage is tampered with 
+
+HMAC Signing:
+hash-based message authentication code 
+    -verifies integrity and authenticity of the cookie
+    -takes cookie and signs it 
+    -has to be same key and value otherwise, you will get different HMAC 

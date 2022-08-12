@@ -1,0 +1,37 @@
+Authentication vs. Authorization
+-Authentication is process of verifying who a user is --> username/password, security questions, facial rec
+-Authentication is verifying what a specific user has access to --> 
+
+How to (not) store Passwords
+-never store passwords in text (as is in database)
+-instead HASH the password --> run the password through hashing function first and then store the result in the database 
+-HASHING functions - functions that map input data of some arbitrary size to fixed-size output values
+
+-ex: run password thru hashing function that stores the hash password --> get output --> compare output, if same = yes. if not = no. 
+
+Cryptographic Hashing Functions
+-keys --> hash functions --> hashes 
+-ex: takes input strings to 2 digit numbers 
+
+-one way function which is infeasible to invert
+-small change in input yields large change in the output
+-deterministic - same input yields same output 
+-unlikely to find 2 outputs with same values
+-password hash functions are deliberately slow 
+
+
+Password Salts
+-extra safeguard
+-makes it harder to reverse engineer and figure output
+-adds random value when hashing a password 
+-extra special seasoning 
+
+-can store it separately --> add it back --> new hash 
+
+Intro to Bcrypt
+-our own hash function program/application  --> generates salt for the passwords 
+
+
+app.get makes it into a query string which would be visible in the URL 
+
+So for passwords, use app.post 

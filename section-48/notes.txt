@@ -1,0 +1,35 @@
+Express Session and Flash
+
+Sessions
+-cookies are not very practical or secure to store a lot of data client-side 
+-similar to cookies, sessions are server-side data store that we use to make HTTP stateful
+-instead of storing data using cookies, we store the data on the server-side and then send the browser a cookie that can be used to retrieve the data
+
+-session doesn't replace database 
+-sessions store information on the server side and then we send a little cookie back to client: 'here's key/id to unlock that session'
+-ex: session - some id, your info associated with the user. server is going to send an id as a cookie to unlock data and browser saves that. 
+    -browser recognizes it and uses it unlock the information 
+
+Express Session
+-universal throughout web dev
+-express session made to work with express
+-npm install express-ession 
+
+-have cookies to make session work
+-cookie from server, you lose it - you lose everything
+-sessions help remember info + modify it server side --> modifying something on server side and then express
+session sends appropriate cookie back 
+
+Flash
+npm install connect-flash 
+-basically a place in the session that flashes a message to user, like confirmation/success
+
+    res.locals
+    -set up middleware --> 
+    app.use((req, res, next) => {
+    res.locals.messages = req.flash('success');
+    next();
+})
+    -object that contains response local variables scoped to the request, and therefore available only to
+    the view(s) rendered during that request/response cycle 
+    -

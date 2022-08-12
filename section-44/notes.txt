@@ -1,0 +1,40 @@
+Data Relationships with Mongo 
+
+Intro to Mongo Relationships
+-IRL: lots of different things stored in database 
+
+SQL Relationships Overview
+-SQL databases - relational DB that can be stored with info. 
+-has strict schema 
+-can model relationships by either referencing from one table in a second table or by creating new relationship tables
+
+One to Few
+-embed the data directly in the document
+
+One to Many
+-one option is to store your data separately, but then store references to document ID's somewhere inside the parent
+-medium amt of data pproach
+-don't directly embed the information in some parent document, but rather
+    embed/store a reference to some document that is defined somewhere else 
+
+
+One to Bajillions
+-with thousands or more documents, it's more difficult to store a reference to the parent on the child document 
+-lots of child documents/things associated with one things
+-ex: tweets: can embed all tweets within 1 user into single user document
+    -some people have thousands of tweets over a long period of time --> more efficient to store a reference to the parent on a child 
+    -store a reference to the user on an individual tweets
+-no need to make array, but you set it on the child
+
+-.populate: builds a more complicated query BTS that is sent to mongo and fetch associated info to fill in instead of using the ID.
+-main take away: embed or reference object ID, then use .populate method to get Mongoose to fetch appropriate information
+
+Mongo Schema Design 
+-integration with express app 
+-look at MongoDB blog post for MongoDB Schema Design 
+    -How am I going to use this data?
+    -Where am I going to access it?
+    -How will I access it?
+    -What do I need frequently?
+    -What do I need together? 
+-could be reference from parent or referencing from a child or embedding data or setting 2 way references or duplicating data
