@@ -1,5 +1,4 @@
 //deletes in databases and replaces it with new campgrounds. basic seed setup. 
-
 const mongoose = require('mongoose');
 const Campground = require('../models/campground');
 const cities = require('./cities');
@@ -31,17 +30,16 @@ const seedDB = async() => {
             author: '62f1aee3c404733aaaa7e2dd', 
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum enim quia, dolor odio perferendis dignissimos tenetur, cumque omnis voluptatibus aperiam ex totam reiciendis exercitationem perspiciatis. Perferendis quidem delectus officiis eos.',
             price,
             images: [
                 {
-                    url: 'https://res.cloudinary.com/douqbebwk/image/upload/v1600060601/YelpCamp/ahfnenvca4tha00h2ubt.png',
-                    filename: 'YelpCamp/ahfnenvca4tha00h2ubt'
+                    url: 'https://res.cloudinary.com/tang-incorp/image/upload/v1660370069/YelpCamp/peuh4fpzmssrcjfzwsbf.jpg',
+                    filename: 'YelpCamp/peuh4fpzmssrcjfzwsbf'
                 },
                 {
-                    url: 'https://res.cloudinary.com/douqbebwk/image/upload/v1600060601/YelpCamp/ruyoaxgf72nzpi4y6cdi.png',
-                    filename: 'YelpCamp/ruyoaxgf72nzpi4y6cdi'
+                    url: 'https://res.cloudinary.com/tang-incorp/image/upload/v1660370069/YelpCamp/lpwbxyy5ucbf7dhqipuh.jpg',
+                    filename: 'YelpCamp/lpwbxyy5ucbf7dhqipuh'
                 }
             ]
         })

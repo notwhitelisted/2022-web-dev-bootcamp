@@ -4,33 +4,30 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require('express');
 const router = express.Router();
+const campgrounds = require('../controllers/campgrounds');
 const catchAsync = require('../utilities/catchAsync');
 const { isLoggedIn, isAuthor, validateCampground } = require('../middleware');
-const campgrounds = require('../controllers/campgrounds')
-const Campground = require('../models/campground');
 const multer = require('multer');
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
 
-//index page
-router.get('/', catchAsync(campgrounds.index));
+const Campground = require('../models/campground');
+
+//index and create page
+router.route('/')
+    .get(catchAsync(campgrounds.index))
+    .post(isLoggedIn, upload.array('image'), validateCampground, catchAsync(campgrounds.createCampground))
 
 //new page
 router.get('/new', isLoggedIn, campgrounds.renderNewForm);
 
-//create page
-router.post('/', isLoggedIn, upload.array('image'), validateCampground, catchAsync(campgrounds.createCampground))
-
-
-//show page
-router.get('/:id', catchAsync(campgrounds.showCampground));
+//show, update, delete page
+router.route('/:id')
+    .get(catchAsync(campgrounds.showCampground))
+    .put(isLoggedIn, isAuthor, upload.array('image'), validateCampground, catchAsync(campgrounds.updateCampground))
+    .delete(isLoggedIn, isAuthor, catchAsync(campgrounds.deleteCampground));
 
 //edit page
 router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(campgrounds.renderEditForm))
-
-//updating page
-router.put('/:id', isLoggedIn, isAuthor, upload.array('image'), validateCampground, catchAsync(campgrounds.updateCampground));
-
-router.delete('/:id', isLoggedIn, isAuthor, catchAsync(campgrounds.deleteCampground));
 
 module.exports = router;

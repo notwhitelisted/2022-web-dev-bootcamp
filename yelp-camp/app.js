@@ -1,7 +1,11 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
-const path = require('path');
 const ExpressError = require('./utilities/ExpressError')
 const methodOverride = require('method-override')
 const flash = require('connect-flash');
